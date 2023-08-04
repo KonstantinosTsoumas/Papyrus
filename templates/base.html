@@ -202,13 +202,18 @@
         {% endif %}
         {% block content %} {% endblock %}
     </div>
-    <footer class="flex w-full text-xs justify-center mt-10 mb-6 text-zinc-600 dark:text-zinc-400">
+    <footer class="container nu no-top">
+        {% include "footer.html" %}
+    </footer>
+    <footer class="flex w-full text-xs text-sm justify-center mt-10 mb-6 text-zinc-600 dark:text-zinc-100">
         <div class="px-4">
-            <span>{% if COPYRIGHT %}{{ COPYRIGHT }}&nbsp;&#8226;&nbsp;{% endif %}</span>Powered by
+            <span>{% if COPYRIGHT %}{{ COPYRIGHT }}&nbsp;&#8226;&nbsp;{% endif %}</span> Konstantinos Tsoumas <br>Built with
             <a class="underline" href="https://getpelican.com/">Pelican</a>&nbsp;&
             <a class="underline" href="https://github.com/aleylara/Papyrus">Papyrus</a>
         </div>
     </footer>
+
+
 
     {% include 'analytics.html' %}
     {% include 'disqus_script.html' %}
