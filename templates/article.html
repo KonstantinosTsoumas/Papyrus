@@ -16,6 +16,8 @@
 
 {% block content %}
 
+{% set SITEURL = "https://blogantinos.com" %}
+
 <main>
   <header>
     <h1 class="font-semibold text-3xl my-2">{{article.title}}</h1>
@@ -104,14 +106,15 @@
     {% if SHARE %}
     <div class="flex bg-zinc-200 dark:bg-zinc-700 py-2 rounded-lg justify-center space-x-2 text-xs">
       {% for name, link in SHARE %}
-      <ul>
-        <li class="bg-gray-900 p-1 text-white rounded-md">
-          <a target="_blank" rel="noopener noreferrer" title="{{ name }}" aria-label="share Features on {{ name }}"
-            href="{{ link }}{{ SITEURL }}/{{ article.url }}">
-            <i class="fab fa-{{ name }} fa-2x" aria-hidden="true"></i>
-          </a>
-        </li>
-      </ul>
+    <ul>
+      <li class="bg-gray-900 p-1 text-white rounded-md">
+        {% set post_name = article.url.split('.')[0] %}
+        <a target="_blank" rel="noopener noreferrer" title="{{ name }}" aria-label="share Features on {{ name }}"
+          href="{{ link }}{{ SITEURL }}/{{ post_name }}">
+          <i class="fab fa-{{ name }} fa-2x" aria-hidden="true"></i>
+        </a>
+      </li>
+    </ul>
       {% endfor %}
     </div>
     {% endif %}
