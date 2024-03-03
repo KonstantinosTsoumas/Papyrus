@@ -29,7 +29,7 @@
     {% endblock head %}
 </head>
 
-<body class="min-h-screen flex flex-col max-w-7xl lg:max-w-none text-zinc-800 bg-neutral-100 
+<body class="min-h-screen flex flex-col max-w-7xl lg:max-w-none text-zinc-800 bg-neutral-100
     dark:bg-neutral-900 dark:text-zinc-300 container mx-auto justify-center md:px-3 ">
     <script>
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
@@ -57,14 +57,14 @@
             </button>
         </div>
         <ul class="flex flex-wrap lg:mr-24 md:pt-0">
+            <li class="mr-4 pt-6"><a {% if current==page %} class="border-b-2 border-zinc-800 dark:border-zinc-300" {% endif %} href="{{ SITEURL }}">Home</a></li>
             {% if DISPLAY_PAGES_ON_MENU %}
             {% for p in pages %}
-            <li class="mr-4 pt-6"><a {% if current==page %} class="border-b-2 border-zinc-800 dark:border-zinc-300" {% endif %} href="{{ SITEURL }}">Home</a></li>
-            <li class="mr-4 pt-6"><a {% if current==page %} class="border-b-2 border-zinc-800 dark:border-zinc-300" {% endif %} href="{{ SITEURL }}">Fermentation</a></li>
             <li class="mr-4 pt-6"><a {% if p==page %} class="border-b-2 border-zinc-800 dark:border-zinc-300"
                     {% endif %} href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
             {% endfor %}
             {% endif %}
+<!--            <li class="mr-4 pt-6"><a href="{{ SITEURL }}/category/fermentation.html">Fermentation</a></li>-->
             <li class="mr-4 pt-6"><a {% if current=="archive" %} class="border-b-2 border-zinc-800 dark:border-zinc-300"
                     {% endif %} href="{{ SITEURL }}/archives.html">Archive</a></li>
             <li class="mr-4 pt-6"><a {% if current=="categories" %}
